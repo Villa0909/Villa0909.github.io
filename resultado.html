@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tu resultado</title>
+  <style>
+    body{font-family:Arial;background:#0f1724;color:#e6eef8;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}
+    .card{background:#0b1220;padding:32px;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,0.5)}
+    .check{font-size:64px;margin-bottom:12px}
+    h1{margin:0 0 8px;font-size:24px}
+    p{color:#94a3b8;font-size:18px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✔️</div>
+    <h1>¡Aquí está tu resultado!</h1>
+    <p id="persona"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nombre = params.get("p");
+    document.getElementById("persona").textContent = "Te tocó: " + nombre;
+  </script>
+</body>
+</html>
